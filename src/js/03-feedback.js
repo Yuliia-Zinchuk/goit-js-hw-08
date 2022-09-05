@@ -27,6 +27,10 @@ populateMessageOutput();
 
 function onFormSubmit(event) {
   event.preventDefault();
+
+  if (inputEmail.value === '' || textarea.value === '') {
+    return alert('All fields must be filled. Please fil them out');
+  }
   console.log(formData);
   event.target.reset();
   localStorage.removeItem('feedback-form-state');
